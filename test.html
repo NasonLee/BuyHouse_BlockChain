@@ -1,0 +1,32 @@
+<form name='form' id='form' action="">
+帳號: <input type="text" id="myUserName" placeholder="請創立帳號..."><br>
+密碼: <input type="password" id="myPassword" placeholder="請輸入密碼..."><br>
+姓名: <input type="text" id="myName" placeholder="請輸入姓名...例：王大明" ><br>
+生日: <input type="date" id="myBirthdate" placeholder="請輸入生日...年/月/日"><br>
+身分證字號: <input type="text" id="myNational ID" placeholder="請輸入身分證字號...例：B123456789"><br>
+電話: <input type="text" id="myPhone" placeholder="請輸入電話號碼...例：0988......."><br>
+住址: <input type="text" id="myAddress" placeholder="請輸入住址...例：台北市文山區指南路二段1號2樓之3"><br>
+電子信箱: <input type="email" id="myEmail" placeholder="請輸入電子信箱...例：johnpaul2@ylc.edu.us"><br>
+以太坊住址: <input type="text" id="myEthereumAddress" placeholder="請輸入以太坊住址...例：0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"><br>
+<input type="button" value="輸入 " onclick='processFormData();'/>
+</form>
+
+<head>
+    <title>寫註冊資料</title>
+    <script>
+		function processFormData() {
+  var name_element = document.getElementById('myUserName');
+  var name = name_element.value;
+  var pw_element = document.getElementById('myPassword');
+  var pw = pw_element.value;
+  //alert('你的姓名是'+name+'\n電子郵件是'+email);
+  
+
+   
+
+  var objFSO=new ActiveXObject("Scripting.FileSystemObject");
+  var objStream=objFSO.OpenTextFile("C:\\Users\\koko3\\Desktop\\test\\test.txt",2,true,false)
+  objStream.WriteLine(name+" "+pw);
+}
+    </script>
+</head>

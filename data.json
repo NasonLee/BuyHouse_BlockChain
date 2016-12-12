@@ -1,0 +1,7 @@
+
+{ 
+     "members": [ 
+                        { "name": "Hero", "password": 5}, 
+                        { "name": "Euro", "password": 2} 
+                      ]
+}

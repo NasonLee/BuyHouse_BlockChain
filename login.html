@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Login Form</title>
+  
+  <script>
+	function processdata(){
+		var name_element = document.getElementById('myUserName');
+		var name = name_element.value;
+		var pw_element = document.getElementById('myPassword');
+		var pw = pw_element.value;
+		
+		var objFSO=new ActiveXObject("Scripting.FileSystemObject");
+		var objStream=objFSO.OpenTextFile("C:\\Users\\koko3\\Desktop\\test\\test.txt",1,true,false)
+		var flag = 0;
+		while (!objStream.AtEndOfStream) 
+		{ 
+			var s = objStream.Readline(); 
+			var newarray = new Array();
+			newarray = s.split(" ")
+			if(name==newarray[0]){
+				if(pw==newarray[1]){
+					alert("Login successful!!");
+					flag=1;
+					window.location.href='uploadimg.html';
+				}
+				else{
+					alert("wrong password");
+				}
+			}	
+					
+			    
+			//console.log(newarray[0]); 
+		} 
+		if(flag==0)alert("Login failed");
+	}
+  </script>
+</head>
+<body>
+  
+      <h1>Login </h1>
+      <form method="post" action="index.html">
+        Username: <input type="text" id="myUserName" placeholder="input username"><br>
+		Password: <input type="password" id="myPassword" placeholder="input password"><br>
+        
+        <input type="button" value="login " onclick='processdata();'/>
+      </form>
+   
+
+  
+</body>
+</html>
